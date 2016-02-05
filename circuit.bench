@@ -1,0 +1,35 @@
+# 2 inverters
+# 8 gates (1 ANDs + 1 NANDs + 2 ORs + 4 NORs)
+
+OUTPUT(DFF_G11)
+# s27
+INPUT(G0)
+INPUT(DFF_G6)
+# 3 D-type flipflops
+
+INPUT(G1)
+G15 = OR(G12, G8)
+
+OUTPUT(G17)
+DFF_G10 = NOR(G14, DFF_G11)
+
+# 4 inputs
+DFF_G13 = NOR(G2, G12)
+
+G17 = NOT(DFF_G11)
+OUTPUT(DFF_G13)
+G16 = OR(G3, G8)
+G9 = NAND(G16, G15)
+G8 = AND(G14, DFF_G6)
+INPUT(DFF_G7)
+INPUT(DFF_G5)
+INPUT(G3)
+
+OUTPUT(DFF_G10)
+
+
+G12 = NOR(G1, DFF_G7)
+DFF_G11 = NOR(DFF_G5, G9)
+INPUT(G2)
+# 1 outputs
+G14 = NOT(G0)
